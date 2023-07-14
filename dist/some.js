@@ -1,35 +1,36 @@
-var button = document.querySelector("button");
-var input1 = document.getElementById("num1");
-var input2 = document.getElementById("num2");
+"use strict";
+const button = document.querySelector("button");
+const input1 = document.getElementById("num1");
+const input2 = document.getElementById("num2");
 function add(num1, num2) {
     return num1 + num2;
 }
 button.addEventListener("click", function () {
     console.log(add(+input1.value, +input2.value));
 });
-var age;
+let age;
 age = 50;
-var namee;
+let namee;
 namee = 'Max';
-var toggle;
+let toggle;
 toggle = true;
-var empty;
+let empty;
 empty = null;
-var notInitialize;
+let notInitialize;
 notInitialize = undefined;
-var callback;
-callback = function (a) { return 100 + a; };
-var anything;
+let callback;
+callback = (a) => { return 100 + a; };
+let anything;
 anything = -20;
 anything = 'Text';
 anything = {};
-var some;
+let some;
 some = 'Text';
-var str;
+let str;
 if (typeof some === "string") {
     str = some;
 }
-var person;
+let person;
 person = ['Max', 21];
 var Load;
 (function (Load) {
@@ -37,8 +38,8 @@ var Load;
     Load[Load["READY"] = 1] = "READY";
 })(Load || (Load = {}));
 ;
-var x;
-var y;
+let x;
+let y;
 function showMessage(message) {
     console.log(message);
 }
@@ -48,19 +49,19 @@ function calc(num1, num2) {
 function customError() {
     throw new Error('Error');
 }
-var page1 = {
+const page1 = {
     title: 'The awesome page',
     likes: 100,
     accounts: ['Max', 'Anton', 'Nikita'],
     status: 'open',
     details: {
         createAt: new Date('2021-01-01'),
-        updateAt: new Date('2021-05-01')
+        updateAt: new Date('2021-05-01'),
     }
 };
-var page2 = {
+const page2 = {
     title: 'Python or Js',
     likes: 5,
     accounts: ['Alex'],
-    status: 'close'
+    status: 'close',
 };
