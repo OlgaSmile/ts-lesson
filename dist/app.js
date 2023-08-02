@@ -10,6 +10,7 @@ class Key {
 class Person {
     constructor(key) {
         this.key = key;
+        this.key = key;
     }
     getKey() {
         return this.key;
@@ -18,28 +19,29 @@ class Person {
 class House {
     constructor(key) {
         this.key = key;
-        this.doorOpen = false;
+        this.door = false;
         this.tenants = [];
+        this.key = key;
     }
     comeIn(person) {
-        if (!this.doorOpen) {
-            throw new Error('Door is close');
+        if (!this.door) {
+            throw new Error('Who are you? You do not live here!');
         }
         this.tenants.push(person);
-        console.log('Person inside');
+        console.log('Hi, dude! Please, come in!');
     }
 }
 class MyHouse extends House {
     openDoor(key) {
-        if (key.getSignature !== this.key.getSignature) {
-            throw new Error('Key to another door');
+        if (this.key.getSignature !== key.getSignature) {
+            throw new Error('Please, try another key');
         }
-        this.doorOpen = true;
+        return this.door = true;
     }
 }
 const key = new Key();
-const house = new MyHouse(key);
 const person = new Person(key);
-house.openDoor(person.getKey());
-house.comeIn(person);
+const myHouse = new MyHouse(key);
+myHouse.openDoor(person.getKey());
+myHouse.comeIn(person);
 //# sourceMappingURL=app.js.map
